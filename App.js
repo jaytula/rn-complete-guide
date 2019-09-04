@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState("");
-  const [courseGoals, setCourseGoals] = useState([]);
+  const [courseGoals, setCourseGoals] = useState(["a", "b"]);
 
   const goalInputHandler = enteredText => {
     setEnteredGoal(enteredText);
@@ -26,7 +26,7 @@ export default function App() {
       <View>
         {courseGoals.map(goal => (
           <View key={goal}>
-            <Text>{goal}</Text>
+            <Text style={styles.listItem}>{goal}</Text>
           </View>
         ))}
       </View>
@@ -48,5 +48,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: "80%"
+  },
+  listItem: {
+    padding: 10,
+    marginVertical: 10,
+    backgroundColor: "#ccc",
+    borderColor: "black",
+    borderWidth: 1
   }
 });

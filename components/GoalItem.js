@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 
 const styles = StyleSheet.create({
   listItem: {
@@ -14,10 +14,17 @@ const styles = StyleSheet.create({
 
 const GoalItem = props => {
   const { title } = props;
+
+  const onPress = () => {
+    console.log("onPress");
+  };
+
   return (
-    <View>
-      <Text style={styles.listItem}>{title}</Text>
-    </View>
+    <TouchableOpacity onPress={props.deleteHandler.bind(this, props.id)}>
+      <View>
+        <Text style={styles.listItem}>{title}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 

@@ -15,10 +15,6 @@ const styles = StyleSheet.create({
 const GoalItem = props => {
   const { title } = props;
 
-  const onPress = () => {
-    console.log("onPress");
-  };
-
   return (
     <TouchableOpacity onPress={props.deleteHandler.bind(this, props.id)}>
       <View>
